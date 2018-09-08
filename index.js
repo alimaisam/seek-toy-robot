@@ -1,10 +1,10 @@
 import prompt from 'prompt';
-import PlayGround from './src/playground';
+import Table from './src/playground';
 import Robot from './src/robot';
 import Command from './src/Commands'
 import _ from 'lodash';
 
-var table = PlayGround.initiate(5, 5);
+var table = Table.initiate(5, 5);
 var robot = Robot.initiate(table);
 
 function input() {

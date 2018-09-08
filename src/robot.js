@@ -23,8 +23,10 @@ const Robot = {
             if (validateNewPosition(nextPosition, robot.table)) {
                 robot.position.x = nextPosition.newX;
                 robot.position.y = nextPosition.newY;
+                return true;
             }
         }
+        return false;
     },
 
     turnRobotLeft: (robot) => {
@@ -32,7 +34,10 @@ const Robot = {
             const result = _.indexOf(directions, robot.direction);
             if (result === 0) robot.direction = directions[directions.length - 1];
             else robot.direction = directions[result - 1];
+
+            return true;
         } 
+        return false;
     },
 
     turnRobotRight: (robot) => {
@@ -40,7 +45,10 @@ const Robot = {
             const result = _.indexOf(directions, robot.direction);
             if (result === 3) robot.direction = directions[0];
             else robot.direction = directions[result + 1];
+
+            return true;
         }
+        return false;
     },
 
     placeRobotOnTable: (command, robot) => {
@@ -51,15 +59,18 @@ const Robot = {
             robot.position.y= parseInt(result[1]);
             robot.direction = ParseDirection.Parse(result[2]);
             robot.placed = true;
+
+            return true;
         }
+        return false;
     },
 
     reportRobotPosition: (robot) => {
         if (robot.placed) {
-            console.log('%d,%d,%s', robot.position.x, robot.position.y, robot.direction);
-        } else {
-            console.log('Robot is not placed on the table');
+            const output = _.join([robot.position.x, robot.position.y, robot.direction], ',');
+            return output;
         }
+        return false;
     }
 }
 

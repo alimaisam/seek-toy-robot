@@ -15,7 +15,10 @@ function input() {
           return;
         }
 
-        Command.parseAndExecute(result.command.toUpperCase(), robot);
+        const output = Command.parseAndExecute(result.command.toUpperCase(), robot);
+        if (typeof output !== 'boolean') {
+            console.log(output);
+        }
         input();
     });
 }

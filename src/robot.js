@@ -29,7 +29,6 @@ const Robot = {
 
     turnRobotLeft: (robot) => {
         if (robot.placed) {
-
             const result = _.indexOf(directions, robot.direction);
             if (result === 0) robot.direction = directions[directions.length - 1];
             else robot.direction = directions[result - 1];

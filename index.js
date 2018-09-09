@@ -17,7 +17,7 @@ function input() {
 
         const output = Command.parseAndExecute(result.command.toUpperCase(), robot);
         if (typeof output !== 'boolean') {
-            console.log(output);
+            console.log('I am at ' + output);
         }
         input();
     });

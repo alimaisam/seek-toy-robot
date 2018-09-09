@@ -80,6 +80,9 @@ describe('Create and Controls Robot', () => {
 
         it('shouldn\'t allow robot to be placed out the table', () => {
             expect(Robot.placeRobotOnTable('2,5,north', robot)).to.be.false;
+            expect(Robot.placeRobotOnTable('-1,4,north', robot)).to.be.false;
+            expect(Robot.placeRobotOnTable('7,3,north', robot)).to.be.false;
+            expect(Robot.placeRobotOnTable('-1,6,north', robot)).to.be.false;
         })
     })
 })

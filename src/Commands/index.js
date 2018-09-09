@@ -18,10 +18,10 @@ const Commands = {
                     return Robot.moveRobot(robot);
                 }
                 case 'PLACE': {
-                    if (splitCommand.length > 0) {
+                    if (splitCommand.length > 1) {
                         return Robot.placeRobotOnTable(splitCommand[1], robot);
                     }
-                    break;
+                    return false;
                 }
                 case 'REPORT': {
                     return Robot.reportRobotPosition(robot);

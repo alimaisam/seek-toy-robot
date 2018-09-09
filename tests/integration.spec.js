@@ -53,4 +53,32 @@ describe('Integration Tests', () => {
         commands.forEach(command => applyCommand(command, robot));
         expect(Robot.reportRobotPosition(robot)).to.have.string('3,3,NORTH');
     })
+
+    it('Integration Test 4', () => {
+        const commands = [
+            'PLACE 0,0,NORTH',
+            'LEFT',
+            'LEFT',
+            'LEFT',
+            'LEFT',
+            'REPORT'
+        ]
+
+        commands.forEach(command => applyCommand(command, robot));
+        expect(Robot.reportRobotPosition(robot)).to.have.string('0,0,NORTH');
+    })
+
+    it('Integration Test 5', () => {
+        const commands = [
+            'PLACE 0,0,NORTH',
+            'RIGHT',
+            'RIGHT',
+            'RIGHT',
+            'RIGHT',
+            'REPORT'
+        ]
+
+        commands.forEach(command => applyCommand(command, robot));
+        expect(Robot.reportRobotPosition(robot)).to.have.string('0,0,NORTH');
+    })
 })

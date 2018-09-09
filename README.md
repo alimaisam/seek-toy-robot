@@ -12,7 +12,7 @@ In this problem, we are creating a toy robot simulation
 git clone https://github.com/alimaisam/seek-toy-robot.git
 ```
 
-## Server
+## Simulator
 
 To start the simulation, run following commands
 ```bash

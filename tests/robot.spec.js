@@ -4,7 +4,7 @@ import Robot from '../src/robot';
 import Table from '../src/playground';
 import {expect} from "chai";
 
-describe('Create and Controls Robot', () => {
+describe('Creates and Controls Robot', () => {
     describe('Initializes a robot', () => {
         it('should initialize a robot', () => {
             const table = Table.initiate(5, 5);
@@ -12,6 +12,8 @@ describe('Create and Controls Robot', () => {
             expect(robot).to.be.an('object');
             expect(robot).to.have.property('table');
             expect(robot).to.have.property('position');
+            expect(robot.position).to.have.property('x').eq(null);
+            expect(robot.position).to.have.property('y').eq(null);
             expect(robot).to.have.property('placed').eq(false);
             expect(robot).to.have.property('direction').eq(null);
         })
@@ -73,7 +75,7 @@ describe('Create and Controls Robot', () => {
 
     describe('Robot cannot be placed', () => {
         var robot = null;
-        beforeEach(() => {
+        before(() => {
             const table = Table.initiate(5, 5);
             robot = Robot.initiate(table);
         })

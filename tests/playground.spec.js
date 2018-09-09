@@ -3,8 +3,8 @@
 import Table from '../src/playground'
 import {expect} from "chai";
 
-describe('Create Table', () => {
-    describe('Create 5x5 Table', () => {
+describe('Create a Playground', () => {
+    describe('Creates 5x5 Table', () => {
         it('should create a 5x5 table', () => {
             const table = Table.initiate(5, 5);
             expect(table).to.be.an("object");
@@ -17,7 +17,7 @@ describe('Create Table', () => {
         })
     })
 
-    describe('Create 3x7 Table', () => {
+    describe('Creates 3x7 Table', () => {
         it('should create a 3x7 table', () => {
             const table = Table.initiate(3, 7);
             expect(table).to.be.an("object");

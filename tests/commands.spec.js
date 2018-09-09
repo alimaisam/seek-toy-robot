@@ -48,5 +48,10 @@ describe('Parse and execute commands', () => {
             const result = Commands.parseAndExecute(('place').toUpperCase(), robot);
             expect(result).to.be.false;
         })
+
+        it('should return false if the place command dont have correct parameters', () => {
+            const result = Commands.parseAndExecute(('place hi,hello,north').toUpperCase(), robot);
+            expect(result).to.be.false;
+        })
     })
 })

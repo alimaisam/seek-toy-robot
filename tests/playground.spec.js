@@ -15,7 +15,7 @@ describe('Create Table', () => {
                 .to.have.property("y")
                 .eq(5);
         })
-    });
+    })
 
     describe('Create 3x7 Table', () => {
         it('should create a 3x7 table', () => {
@@ -28,7 +28,7 @@ describe('Create Table', () => {
                 .to.have.property("y")
                 .eq(7);
         })
-    });
+    })
 
     describe('Wont Create a table if area is not correctly defined', () => {
         it('should throw error', () => {
@@ -44,5 +44,5 @@ describe('Create Table', () => {
                 Table.initiate(5, -3);
             }).to.throw("Table size should be greater than 0");
         })
-    });
+    })
 })

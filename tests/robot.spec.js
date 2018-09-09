@@ -15,7 +15,7 @@ describe('Create and Controls Robot', () => {
             expect(robot).to.have.property('placed').eq(false);
             expect(robot).to.have.property('direction').eq(null);
         })
-    });
+    })
 
     describe('Controls the robot', () => {
         var robot = null;
@@ -45,7 +45,7 @@ describe('Create and Controls Robot', () => {
         it ('should print the current robot position', () => {
             expect(Robot.reportRobotPosition(robot)).to.have.string('1,1,NORTH');
         })
-    });
+    })
 
     describe('Robot initialized but not placed on the table', () => {
         var robot = null;
